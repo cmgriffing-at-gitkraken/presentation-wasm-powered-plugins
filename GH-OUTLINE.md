@@ -1,0 +1,10 @@
+- agenda
+- intro
+- the impact of copilot
+- the path to github actions
+    - where we were
+    - why we migrated
+    - what we learned
+    - what we're doing now
+- composable custom actions
+- wrapping up

@@ -1,0 +1,10 @@
+img {
+    max-height: 70%;
+    width: auto;
+    margin: 2rem auto;
+}
+
+.slidev-code-wrapper {
+    padding: 0.5rem;
+}
+
