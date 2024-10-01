@@ -1,10 +1,39 @@
+:root {
+    --slidev-theme-primary: #c9e6f3;
+    --prism-font-size: 1.2em;
+}
+
 img {
     max-height: 70%;
     width: auto;
     margin: 2rem auto;
 }
 
+.dark .slidev-slide-content {
+    background: #002547 !important;
+}
+
 .slidev-code-wrapper {
     padding: 0.5rem;
 }
 
+.slidev-layout {
+    font-size: 1.5rem;
+}
+
+.slidev-layout h1+p {
+    opacity: 1;
+}
+
+.slidev-layout blockquote {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.grid-cols-2 :nth-child(2) {
+    border-radius: 1rem;
+}
+
+.col-header {
+    margin-bottom: 1rem;
+}

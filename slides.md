@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: ./images/title-bg.png
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
 info: |
@@ -27,27 +27,31 @@ mdc: true
 The Power of Extism
 
 ---
+layout: image-right
+image: ./images/self-portrait.jpg
+---
 
 # Introduction
 
-- Software Dev for 9 years
+- cmgriffing on all socials
+
+<img src="./images/qr-code.png" class="w-40 h-auto mx-auto my-2">
+
+- Software Dev for ~10 years
 - Developer Advocate at GitKraken
 - Twitch Programming Streamer
 - Snowboarder
-- cmgriffing on all socials
-  - Twitch
-  - YouTube
-  - Twitter
-  - LinkedIn
-  - etc
+
 
 ---
 
 # What is WASM?
 
+<h2 class="mt-32 max-w-160 mx-auto">
 WebAssembly: a low-level assembly-like language with a compact binary format that runs with near-native performance
+</h2>
 
-<!-- 
+<!--
 
 according to MDN
 
@@ -57,18 +61,22 @@ according to MDN
 
 # The History of WASM
 
-- 2011: Emscripten library started
-- 2011: Google NaCL (Native Client)
-- 2013: asm.js
-- 2015: WASM Announced
-- 2017: NaCL deprecated in favor of WASM
-- 2017: Broad browser support
-- 2019: WASM Threads enabled by default in Chrome
-- 2022: WASM 2.0 draft
+<ul class="ml-40 mt-8">
+  <li>2011: Emscripten library started</li>
+  <li>2011: Google NaCL (Native Client)</li>
+  <li>2013: asm.js</li>
+  <li>2015: WASM Announced</li>
+  <li>2017: NaCL deprecated in favor of WASM</li>
+  <li>2017: Broad browser support</li>
+  <li>2019: WASM Threads enabled by default in Chrome</li>
+  <li>2022: WASM 2.0 draft</li>
+</ul>
 
 ---
 
-# asm.js Briefly
+<!-- hmm -->
+
+<!-- # asm.js Briefly
 
 ```ts {all|1|2|5|9-10|14-16|all}
 function BasicMathModule(stdlib, foreign, heap) {
@@ -79,31 +87,30 @@ function BasicMathModule(stdlib, foreign, heap) {
 
   // Function Declarations
   function square(x) {
-      x = +x;
-      return +(x*x);
+    x = +x;
+    return +(x * x);
   }
 
   function add(x, y) {
-      x = x|0;
-      y = y|0;
-      return (x + y)|0;
+    x = x | 0;
+    y = y | 0;
+    return (x + y) | 0;
   }
 
   return { square: square, add: add };
 }
 ```
+ -->
 
----
-
-# The Birth and Death of JavaScript
+<!-- # The Birth and Death of JavaScript
 
 A talk by Gary Bernhardt from PyCon 2014
 
 https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 
-<img src="./images/birth-and-death-video.png">
+<img src="./images/birth-and-death-video.png"> -->
 
-<!--  
+<!--
 
 - His talk focuses on asm.js
 - Pronounces JS as YavaScript
@@ -112,38 +119,68 @@ https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 
 -->
 
-
----
-
 # Popular Usage
 
-- Figma
-- CapCut Web
-- 1Password
-- Google Earth
-- Ublock Origin
-- lichess
+<div class="grid grid-cols-2 w-full h-full auto-rows-fr items-center justify-center gap-x-32">
+
+<v-clicks depth="2">
+
+<div class="flex items-center justify-start"><img src="./images/figma.svg" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start"><img src="./images/capcut-better.svg" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start"><img src="./images/1password.svg" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start"><img src="./images/google-earth.svg" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start"><img src="./images/ublock-origin.svg" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start"><img src="./images/lichess.svg" class="w-[5rem] h-full m-0 mr-2"><span class="text-[3.5rem]">Lichess.org</span></div>
+
+</v-clicks>
+
+</div>
 
 ---
 
 # Running WASM (Browsers)
-
+<!--
 - All Major Browsers
   - Chrome
   - Firefox
   - Opera
   - Safari
-  - Edge
+  - Edge -->
 
+All modern browsers
+
+
+<div class="grid grid-cols-3 w-full h-full auto-rows-fr items-center justify-center gap-x-16">
+
+<v-clicks depth="2">
+
+<div class="flex items-center justify-center"><img src="./images/chrome.svg" class="w-32 h-32 m-0"></div>
+<div class="flex items-center justify-center"><img src="./images/firefox.svg" class="w-32 h-32 m-0"></div>
+<div class="flex items-center justify-center"><img src="./images/opera.svg" class="w-32 h-32 m-0"></div>
+<div class="flex items-center justify-center"><img src="./images/safari.svg" class="w-32 h-32 m-0"></div>
+<div class="flex items-center justify-center"><img src="./images/edge.svg" class="w-32 h-32 m-0"></div>
+<div class="flex items-center justify-center"><img src="./images/not-ie.svg" class="w-32 h-32 m-0"></div>
+
+</v-clicks>
+
+</div>
+
+---
+layout: image-right
+image: ./images/wasi.png
 ---
 
 # WASI
+
+<div class="mt-24">
 
 WebAssembly System Interface
 
 - Designed by Mozilla
 - Provides POSIX-like features
   - Such as file I/O
+
+</div>
 
 ---
 layout: image-left
@@ -160,23 +197,35 @@ image: ./images/solomon-hykes.jpg
 
 # Running WASM (outside browsers)
 
-- Embeddable Runtimes
-  - Extism
-  - Wasmtime
-  - Spin SDK
-  - Wasmer.io
+<div class="grid grid-cols-2 w-full h-full auto-rows-fr items-center justify-center gap-x-32">
+
+<v-clicks depth="2">
+
+<div class="flex items-center justify-start m-0"><img src="./images/extism-logo.png" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start m-0"><img src="./images/bca.svg" class="w-[5rem] h-full m-0 mr-2"><span class="text-[3.5rem]">Wasmtime</span></div>
+<div class="flex items-center justify-start m-0"><img src="./images/spin.png" class="w-full h-full m-0"></div>
+<div class="flex items-center justify-start m-0"><img src="./images/wasmer.svg" class="w-full h-full m-0"></div>
+
+</v-clicks>
+
+</div>
 
 ---
 
-<div class="grid grid-cols-2 w-full h-full auto-rows-fr" frontmatter="[object Object]"><div class="slidev-layout default"><h1>Extism</h1><blockquote><p>a plug-in system for everyone</p></blockquote></div><div class="w-full h-auto" style="color: white; background-color: white; background-image: url(&quot;./images/extism-language-support.png&quot;); background-repeat: no-repeat; background-position: center center; background-size: contain;"></div></div>
+<div class="grid grid-cols-2 w-full h-full auto-rows-fr"><div class="slidev-layout default"><h1>Extism</h1><blockquote><p>a plug-in system for everyone</p></blockquote>
+<ul>
+<li>Built by Dylibso</li>
+<li>BSD Licensed</li>
+<li>Written in Rust</li>
+
+</ul>
+</div><div class="w-full h-auto" style="color: white; background-color: white; background-image: url(&quot;./images/extism-language-support.png&quot;); background-repeat: no-repeat; background-position: center center; background-size: contain;"></div></div>
 
 ---
 layout: two-cols-header
 ---
 
-# Extism Concepts: Hosts
-
-## Host (SDKs)
+# Extism Concepts: Hosts (SDKs)
 
 ::left::
 
@@ -191,7 +240,7 @@ layout: two-cols-header
 
 ::right::
 
-- .Net
+- .NET
 - OCaml
 - Perl
 - PHP
@@ -205,142 +254,104 @@ layout: two-cols-header
 <div class="h-8 mt-8 mb-8"></div>
 
 ---
+layout: two-cols-header
+---
 
-# Extism Concepts: Plugins
+# Extism Concepts: Plug-ins (PDKs)
 
-## Plug-in (PDKs)
+<div class="mt-8">PDK = Plug-in Development Kit</div>
+
+::left::
 
 - JS
 - AssemblyScript
 - C
 - Go
+
+::right::
+
 - Haskell
-- .Net
+- .NET
 - Rust
 - Zig
+
+::bottom::
+
+\* Possibly More. Get involved and contribute today!
+
+<div class="h-8 mt-16 mb-16"></div>
 
 ---
 
 # Extism Concepts: 2-way Communication
 
-- passing data from host to plugin by calling plugin functions
-- passing data from plugin to host by calling host functions
+- Default: Hosts invoke plugin functions
+- Optional: Plugins can invoke host functions
 
-## Memory
+<img src="./images/2way.svg" class="w-full h-auto">
 
-- Host/Plug-in seperately managed memory spaces
+
+---
+layout: image-right
+image: ./images/memory-vertical.svg
+class: max-w-full
+---
+
+# Extism Concepts: Memory
+
+- Host/Plug-in: separately managed memory spaces
 - Extism creates its own memory space for communication
 - Communication is done via message passing
   - Objects must be serialized
     - JSON recommended
 
-<!-- TODO: Maybe add image to the side? -->
+<!--
 
----
-layout: two-cols-header
----
+# Extism Concepts: CLI
 
-# Extism CLI
-
-
-::left::
+/::left::
 
 ## Scaffolding plugins
 
 ```bash
 extism generate plugin -o new-plugin
-Select a PDK language to use for your plugin:  
-                                                
-> 1. Rust                                      
-  2. JavaScript                                
-  3. Go                                        
-  4. Zig                                       
-  5. C#                                        
-  6. F#                                        
-  7. C                                         
-  8. Haskell                                   
+Select a PDK language to use for your plugin:
+
+> 1. Rust
+  2. JavaScript
+  3. Go
+  4. Zig
+  5. C#
+  6. F#
+  7. C
+  8. Haskell
   9. AssemblyScript
 ```
 
-::right::
+/::right::
 
 ## Testing plugins without a Host
 
 ```bash
-extism call --input "this is a test" test/code.wasm count_vowels
+extism call
+  --input "this is a test"
+  test/code.wasm count_vowels
+
+# result:
 {"count": 4}
 ```
 
-::bottom::
+/::bottom::
 
-<div class="h-8 mt-8 mb-8"></div>
-
----
-layout: two-cols-header
----
-
-# Why Extism?
-
-Exploring a plugin system for GitKraken (unofficial and unplanned for now)
-
-::left::
-
-## GitKraken Platform:
-- CLI: Go
-- GKD: Electron JS/TS
-- GitLens: TS
-- JetBrains Plugin: Java/Gradle
-  - (planned, not available yet)
-
-::right::
-
-## Reasoning:
-- Consistency
-  - Process
-  - Documentation
-- Compatibility
-
-::bottom::
-
-<div class="h-[10rem]"></div>
-
-<!-- 
-
-GitKraken wants to meet developers where they work.
-
-Which is why we have all of the different surfaces of our platform (cli, desktop, vscode, web, etc)
-
-By the same token, we would want people to be able to develop plugins in their language of choice (within reason). Sorry, COBOL developers.
-
--->
-
----
-
-# What I did?
-
-Basic functionality for:
-  - GitKraken CLI
-  - VSCode GitLens
-
-Basic Process:
-  - Install a Host SDK
-    - CLI: Go
-    - GitLens: TS
-  - Write a plugin using a PDK
-    - TS
-    - Go
-
----
+<div class="h-8 mt-8 mb-8"></div> -->
 
 
-# Notes: HTTP
+<!--
+# Extism Concepts: HTTP API
 
 Must use Extism API instead of native APIs
 
-<!-- Use Shiki magic move for code -->
-
 ````md magic-move {lines: true}
-
 ```go
 import (
 	"encoding/json"
@@ -383,33 +394,232 @@ func Greet() int32 {
 	return 0
 }
 ```
-````
+```` -->
+
+<!-- # Extism Notes: OutputString
+
+OutputString will only happen once in each plugin function call
+
+Last one wins
+
+````md magic-move {lines: true}
+```go
+import (
+	"github.com/extism/go-pdk"
+)
+
+//go:export greet
+func Greet() int32 {
+	name := pdk.InputString()
+	pdk.OutputString("Hello, " + name)
+	pdk.OutputString("Nice to meet you!")
+
+	return 0
+}
+```
+
+```go
+import (
+	"fmt"
+
+	"github.com/extism/go-pdk"
+)
+
+//go:export greet
+func Greet() int32 {
+	name := pdk.InputString()
+
+	hello := "Hello, " + name
+	followup := "Nice to meet you!"
+
+	pdk.OutputString(fmt.Sprintf("%s\n%s", hello, followup))
+
+	return 0
+}
+```
+```` -->
+
+<!--
+# TODO: Notes: Host Functions (JS only?)
+
+# TODO: Notes: JS SDK Types -->
 
 ---
 
-# Notes: OutputString
+# Why Extism?
 
-<!-- Use Shiki magic move for code -->
+<div class="mt-8">
+Exploring a plugin system for GitKraken (unofficial and unplanned for now)
+</div>
+
+
+<div class="grid grid-cols-2 w-full h-full auto-rows-fr items-start justify-center gap-x-32 mt-16">
+
+<v-clicks>
+
+<div>
+
+## GitKraken Platform:
+
+- CLI: Go
+- GKD: Electron JS/TS
+- GitLens: TS
+- JetBrains Plugin: Java/Gradle
+  - (planned, not available yet)
+
+</div>
+
+<div>
+
+## Reasoning:
+
+- Consistency
+  - Process
+  - Documentation
+- Compatibility
+
+</div>
+
+</v-clicks>
+
+</div>
+
+
+
+<!--
+GitKraken wants to meet developers where they work.
+
+Which is why we have all of the different surfaces of our platform (cli, desktop, vscode, web, etc)
+
+By the same token, we would want people to be able to develop plugins in their language of choice (within reason). Sorry, COBOL developers.
+
+-->
 
 ---
 
-# Notes: Host Functions (JS only?)
 
-<!-- Use Shiki magic move for code -->
+# Considerations: Functionality
+
+## Host Events
+
+- Git (commit, push, etc)
+- Files (create, delete, etc)
+- Other (like a merged pull request)
+
+## Host Functions
+
+- Export functions that use user credentials
+- Expose API data that we don't make public yet
 
 ---
 
-# Notes: JS SDK Types
+# Considerations: UI Integration
 
-<!-- Use twoslash for highlighting the lack of a type -->
+<div class="flex flex-row items-start justify-center gap-x-16">
+
+<div class="w-[45%]">
+
+- New git providers
+  - Gitea, Codeberg, etc.
+- New task management tools
+  - Linear, YouTrack, etc
+- Theming
+- Decluttering the UI
+
+</div>
+
+<div class="w-[70%]">
+
+
+<v-switch>
+
+<template #0>
+<img src="./images/gk-hosting.png" class="w-full h-full">
+</template>
+<template #1>
+<img src="./images/gk-issues.png" class="w-full h-full">
+</template>
+<template #2>
+<img src="./images/gk-theming.png" class="w-full h-full">
+</template>
+<template #3>
+<img src="./images/gk-clutter.png" class="w-full h-full">
+</template>
+
+
+</v-switch>
+
+
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+# Considerations: Discoverability
+
+::left::
+
+How do we make it easy for people to discover and use plugins?
+
+What about updating plugins?
+
+::right::
+
+<v-clicks>
+
+- Hosted marketplace
+- A review process
+- User feedback and reviews
+- Version checking and distribution
+
+</v-clicks>
+
+
+::bottom::
+
+<div class="h-8 mt-16 mb-16"></div>
+
+
+
+---
+layout: two-cols-header
+---
+
+# Considerations: Documentation
+
+::left::
+
+Good Documentation is hard
+
+Extism docs handle the basics of the plugin system
+
+::right::
+
+<v-clicks>
+
+- Hosting
+- Keeping docs up to date
+- Example code
+- Internationalization
+
+</v-clicks>
+
+::bottom::
+
+<div class="h-8 mt-16 mb-16"></div>
 
 ---
 
-# TEMP: OUTLINE
+# Inspiration: Real World Example
 
+<img src="./images/wordpress.png" class="">
 
-- Quirks/Issues found along the way
-  - http
-  - JS SDK could use some stronger types
-  - 
+---
+layout: cover
+background: ./images/title-bg.png
+---
 
+# Thanks for listening!
